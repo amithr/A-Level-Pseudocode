@@ -1,0 +1,59 @@
+1. Create and initialize an array of 6 temperatures in Celsius (CelsiusTemps).
+2. Create an empty an array with space for 6 decimals (FahrenheitTemps).
+3. Print out all the values in the CelsiusTemps array
+4. Convert each value in the first array to Fahrenheit and place it in the second array
+5. Calculate the maximum temperature in the FahrenheitTemps array
+6. Calculate the minimum temperature in the FahrenheitTemps array.
+8. Create a procedure to calculate the maximum value in an array, 
+given an array of integers as the parameter.
+
+DECLARE CelsiusTemps: ARRAY[1:6] OF REAL
+DECLARE FahrenheitTemps: ARRAY[1:6] OF REAL
+
+CelsiusTemps[1]<- 21
+CelsiusTemps[2]<- 2
+CelsiusTemps[3]<- 31
+CelsiusTemps[4]<- 15
+CelsiusTemps[5]<- 19
+CelsiusTemps[6]<- 25
+
+FOR I <- 1 TO 6
+    OUTPUT CelsiusTemps[I]
+NEXT I
+
+DECLARE Fahrenheit:REAL
+
+FOR I <- 1 TO 6
+    OUTPUT CelsiusTemps[I]
+    Fahrenheit <- CelsiusTemps[I]*(9/5) + 32
+    FahrenheitTemps[I] <- Fahrenheit
+NEXT I
+
+DECLARE MaxTemp:REAL
+MaxTemp <- FahrenheitTemps[0]
+FOR I <- 1 TO 6
+    IF FahrenheitTemps[I] > MaxTemp THEN
+        MaxTemp <- FahrenheitTemps
+    ENDIF
+NEXT I
+
+OUTPUT MaxTemp
+
+
+// No example of taking arrays as parameters
+PROCEDURE maximum()
+    DECLARE MaxTemp:REAL
+    MaxTemp <- FahrenheitTemps[0]
+    FOR I <- 1 TO 6
+        IF FahrenheitTemps[I] > MaxTemp THEN
+            MaxTemp <- FahrenheitTemps
+        ENDIF
+    NEXT I
+    OUTPUT MaxTemp
+
+CALL maximum()
+
+
+
+
+

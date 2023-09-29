@@ -1,0 +1,57 @@
+1. Get the two values and the operation as input.
+2. Calculate the result using if (if-else don't exist) statements.
+3. Output the result of this operation.
+4. Calculate the result using switch statements.
+5. Turn this into a function
+
+// Show how an if statement words
+
+DECLARE FIRST_VALUE, SECOND_VALUE, RESULT: REAL
+DECLARE OPERATION:STRING
+
+OUTPUT "Input the first value, operation, and then the second value"
+INPUT FIRST_VALUE
+INPUT OPERATON
+INPUT SECOND_VALUE
+
+// Mention not equal <>
+
+IF OPERATION = "+" THEN
+    RESULT <- FIRST_VALUE + SECOND_VALUE
+ELSE 
+    IF OPERATION = "-" THEN
+        RESULT <- FIRST_VALUE - SECOND_VALUE
+    ELSE
+        IF OPERATION = "*" THEN
+            RESULT <- FIRST_VALUE*SECOND_VALUE
+        ELSE
+            IF OPERATION = "/" THEN
+                RESULT <- FIRST_VALUE/SECOND_VALUE
+            ELSE
+                OUTPUT "INVALID OPERATION"
+            ENDIF
+        ENDIF
+    ENDIF
+ENDIF
+
+CASE OF OPERATION
+    "+": RESULT <- FIRST_VALUE + SECOND_VALUE
+    "-": RESULT <- FIRST_VALUE - SECOND_VALUE
+    "*": RESULT <- FIRST_VALUE * SECOND_VALUE
+    "/": RESULT <- FIRST_VALUE / SECOND_VALUE
+    OTHERWISE: OUTPUT "Invalid operation."
+ENDCASE
+
+FUNCTION Calculate(FIRST, OP, SECOND) : RETURNS REAL
+    CASE OF OP
+    "+": RESULT <- FIRST + SECOND
+    "-": RESULT <- FIRST - SECOND
+    "*": RESULT <- FIRST * SECOND
+    "/": RESULT <- FIRST / SECOND
+    OTHERWISE: OUTPUT "Invalid operation."
+    RETURN RESULT
+ENDFUNCTION
+
+DECLARE Result: REAL
+Result <- Calculate(FIRST, OPERATION, SECOND)
+OUTPUT Result

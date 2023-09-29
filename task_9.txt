@@ -1,0 +1,61 @@
+1. Open a text file (amith.txt)
+2. Print out all the text line-by-line
+3. Count how many lines are in the text file
+4. Get the line of text on line 2
+5. Replace the line of text on line 5
+6. Specifically output the last 3 lines of the text file.
+7. Add (append) some text to the text file
+
+DECLARE TextLine : STRING
+OPENFILE "amith.txt" FOR READ
+DECLARE Position : INTEGER
+
+DECLARE NumberOfLines: INTEGER
+
+WHILE NOT EOF("amith.txt")
+    READFILE "amith.txt", TextLine
+    OUTPUT TextLine
+    NumberOfLines <- NumberOfLines + 1
+ENDWHILE
+
+OUTPUT NumberOFLines
+
+CLOSEFILE "amith.txt"
+--------
+// Output the contents of Line 2
+OPENFILE "amith.txt" FOR RANDOM
+DECLARE LineTwo : STRING
+SEEK "amith.txt", 2
+GETRECORD "amith.txt", LineTwo
+OUTPUT LineTwo
+------
+DECLARE ReplaceLineFive : STRING
+ReplaceLineFive <- "Hello, this is Amith."
+OPENFILE "amith.txt" FOR RANDOM
+// Replace the contents of Line 5
+SEEK "amith.txt", 5
+PUTRECORD "amith.txt", ReplaceLineFive
+-------
+// You can move the pointer using SEEK
+// SEEK doesn't affect READFILE
+
+DECLARE Line : STRING
+OPENFILE "amith.txt" FOR RANDOM
+
+FOR Position = NumberOfLines TO NumberOfLines - 3 STEP -1
+    SEEK "amith.txt", Position
+    GETRECORD "amith.txt", Line
+    OUTPUT Line
+NEXT Position
+
+--------
+
+DECLARE TextLine : STRING
+TextLine <- "Good morning"
+OPENFILE "amith.txt" FOR WRITE
+// OPENFILE "amith.txt" FOR APPEND
+
+WRITEFILE "amith.txt", TextLine
+
+CLOSEFILE "amith.txt"
+

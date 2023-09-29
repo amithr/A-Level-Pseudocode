@@ -1,0 +1,13 @@
+1. Get the radius of the sphere from the user
+2. Calculate the volume of the sphere
+3. Output the volume
+
+
+DECLARE Volume:REAL
+DECLARE Radius:REAL
+
+// DECLARE Volume, Radius: REAL
+OUTPUT "Enter the radius of the sphere whose volume you want to find: "
+INPUT Radius
+Volume <- (4/3)*3.14*Radius
+OUTPUT Volume

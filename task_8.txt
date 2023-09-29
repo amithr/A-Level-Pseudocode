@@ -1,0 +1,35 @@
+1. Create a sentence with at least 5 words and store it in a string.
+2. Write a function to calculate the number of words in the array.
+3. Write a function to return the words as an array
+4. Write a method to find the position of a word in an array, if it exists.
+5. Write a function to join an array of strings into one string, 
+with each string separated by a comma.
+6. Write a function to find how many times a specific character is in a string.
+
+
+DECLARE Sentence:STRING
+DECLARE Name:STRING
+DECLARE NewString: STRING
+Sentence <- "Hello, my name is Amith Ravindar."
+
+// Returns the rightmost 5 characters
+RIGHT(Sentence, 5)
+
+// Returns the leftmost 5 characters
+LEFT(Sentence, 5)
+
+MID(Sentence, 5, 8)
+
+// Joins (concatenates) both strings
+NewString <- Sentence & Name
+
+LENGTH(Sentence)
+
+------
+
+DECLARE ArrayChars: ARRAY[1:LENGTH(SENTENCE)] OF CHAR
+FOR I=0 TO LENGTH(SENTENCE) - 1
+    ArrayChars[I] <- MID(SENTENCE(I:I+1))
+
+
+

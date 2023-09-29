@@ -1,0 +1,30 @@
+1. Get a grade as integer user input.
+2. Output a message based on the grade (90-100, 80-89, 70-79)
+3. Do this using switch statements.
+
+DECLARE Grade:INTEGER
+
+// Validation
+WHILE GRADE > 100 AND GRADE < 0
+    OUTPUT "Enter a grade:"
+    INPUT Grade 
+ENDWHILE
+
+IF GRADE >= 90 AND GRADE <= 100 THEN
+    OUTPUT "Good job!"
+ENDIF
+
+IF GRADE >= 80 AND GRADE <= 89 THEN
+    OUTPUT "Not bad!"
+ENDIF
+
+IF GRADE >= 79 AND GRADE <= 70 THEN
+    OUTPUT "Average"
+ENDIF
+
+CASE OF Grade
+    90 TO 100: OUTPUT "Good job!"
+    80 TO 89: OUTPUT "Not bad!"
+    70 TO 79: OUTPUT "Average"
+    OTHERWISE: OUTPUT "FAIL!"
+ENDCASE

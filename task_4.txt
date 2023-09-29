@@ -1,0 +1,24 @@
+1. Write a FOR loop that outputs all of the odd numbers from 0 to 20.
+2. Rewrite this with a REPEAT loop.
+3. Do the above, except with the user inputting the minimum and maximum values.
+4. Wrap the whole REPEAT loop in a procedure and call it.
+
+// 1 to 20 (by 1)
+FOR Counter <- 1 TO 20
+    OUTPUT Counter
+NEXT Counter
+
+FOR Counter <- 1 TO 20 STEP 2
+    OUTPUT Counter
+NEXT Counter
+
+DECLARE Counter:INTEGER
+Counter <- 1
+REPEAT
+    OUTPUT Counter
+    Counter <- Counter + 1
+NEXT Counter <= 20
+
+
+
+

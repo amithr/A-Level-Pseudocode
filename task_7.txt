@@ -1,0 +1,45 @@
+1. Create a custom Student data types which contains their name (String), 
+student ID (String), birth date (Date), and their current GPA (decimal).
+2. Create a student record.
+3. Store this in an array.
+4. Calculate the average GPA of all these students by iterating through the array.
+5. Enumerated Type
+
+TYPE Student
+    DECLARE Name: STRING
+    DECLARE Id: STRING
+    DECLARE BirthDate: DATE
+    DECLARE GradePointAverage: REAL
+ENDTYPE
+
+DECLARE Student1: Student
+DECLARE StudentArray: ARRAY[1:30] OF Student
+
+Student1.Name <- "John Smith"
+Student1.Id <- "X387F"
+Student.BirthDate <- 30/05/2012
+Student.GradePointAverage  <- 3.21
+
+StudentArray[0] <- Student1
+
+// Assume there are 30 other records
+DECLARE Sum: REAL
+FOR I <- 1 TO 30
+    Sum <- Sum + StudentArray[I].GradePointAverage
+NEXT I
+
+--------
+
+STATUS = (Honors, Pass, Failure)
+
+
+    
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+1. Create a class called Car
+
+CLASS Car
+    PRIVATE Make:STRING
+    PRIVATE Model:STRING
+    PRIVATE SerialNumber:INTEGER
+
+    PUBLIC PROCEDURE NEW(CarMake:STRING, CarModel:STRING)
+        Make <- CarMake
+        Model <- CarModel
+        SerialNumber <- RAND(99999)
+    ENDPROCEDURE
+
+    PUBLIC GetMake() RETURNS STRING
+    PUBLIC GetModel() RETURNS STRING
+ENDCLASS
+
+CLASS SuperCar
+    PRIVATE EngineType:STRING
+    PRIVATE FuelType:STRING
+
+    PUBLIC PROCEDURE NEW(CarMake:STRING, CarModel:STRING, CarEngineType:STRING)
+        SUPER.NEW(CarMake, CarModel)
+        EngineType <- CarEngineType
+    ENDPROCEDURE
+ENDCLASS
+
+Bugatti <- NEW SuperCar("Honda", "Camry", "V8")
+OUTPUT Bugatti.GetModel()
+
+
+    
