@@ -17,8 +17,8 @@ DECLARE StudentArray: ARRAY[1:30] OF Student
 
 Student1.Name <- "John Smith"
 Student1.Id <- "X387F"
-Student.BirthDate <- 30/05/2012
-Student.GradePointAverage  <- 3.21
+Student1.BirthDate <- 30/05/2012
+Student1.GradePointAverage  <- 3.21
 
 StudentArray[0] <- Student1
 
